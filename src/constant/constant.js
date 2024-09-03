@@ -18,4 +18,22 @@ const navItems = [
   },
 ];
 
-export { navItems };
+const services = [
+  {
+    title: "Property Listing Management",
+    description:
+      "Manage your property listings effortlessly. Upload details, track views, and control inquiries with ease, all through our user-friendly platform.",
+  },
+  {
+    title: "Customizable Bidding Platform",
+    description:
+      "Boost your property’s exposure with our secure bidding platform. Set price ranges, monitor bids in real-time, and secure the best offers seamlessly.",
+  },
+  {
+    title: "Comprehensive Property Analytics",
+    description:
+      "Access detailed insights into your property’s performance. Track buyer interest, view bid history, and analyze market trends to optimize your sales strategy.",
+  },
+];
+
+export { navItems, services };

@@ -21,6 +21,8 @@ const AdvertiseSection = () => {
       <div className="my-20 md:my-40 mx-auto  flex flex-row-reverse max-md:flex-col justify-between  gap-10 lg:gap-40">
         <ImageWithPosition bigImg={img1} smallImg={img2} leftAlign={false} />
         <SideTextWithCTA
+          subTitle="Property selling"
+          leftAlign={false}
           title="Upload Your Property in Minutes"
           btnText="Sell Property"
         />
@@ -34,6 +36,7 @@ const AdvertiseSection = () => {
       <div className="my-20 md:my-40 mx-auto  flex flex-row-reverse max-md:flex-col justify-between  gap-10 lg:gap-40">
         <ImageWithPosition bigImg={img1} smallImg={img2} leftAlign={false} />
         <SideTextWithCTA
+          subTitle="Property selling"
           leftAlign={false}
           title="Maximize Your Property’s Value"
           btnText="Sell Property"
