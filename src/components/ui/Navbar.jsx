@@ -6,7 +6,7 @@ import { FloatingNav } from "./floating-navbar";
 
 const Navbar = () => {
   return (
-    <nav className="py-8 px-4 sm:py-2 sm:px-16 bg-blue-50">
+    <nav className="py-8 px-4 sm:py-1 sm:px-16 bg-blue-50">
       <div className="max-w-[1440px]  mx-auto flex items-center justify-between  border-blue-400">
         <div className="flex flex-row gap-4 sm:gap-8">
           {navItems.map((route, idx) => (
@@ -16,12 +16,14 @@ const Navbar = () => {
           ))}
         </div>
         <div className="max-sm:hidden">
-          <Image
-            src={"/heritage_logo.png"}
-            width={80}
-            height={80}
-            alt="heritage company logo"
-          />
+          <Link href={"/"}>
+            <Image
+              src={"/heritage_logo.png"}
+              width={80}
+              height={80}
+              alt="heritage company logo"
+            />
+          </Link>
         </div>
         <div>
           <h4 className="font-semibold cursor-pointer hover:opacity-80">
