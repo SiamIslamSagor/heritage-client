@@ -4,7 +4,7 @@ import React from "react";
 
 const ServicesSection = () => {
   return (
-    <div className="min-h-screen">
+    <div className="mb-10 xl:mb-20">
       <h3 className="text-4xl font-bold text-center mb-20">Other Services</h3>
       <div className="flex flex-wrap gap-10  justify-center">
         {services.map(service => (
