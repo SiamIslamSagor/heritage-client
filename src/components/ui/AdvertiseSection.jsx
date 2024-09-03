@@ -2,6 +2,10 @@ import Image from "next/image";
 import React from "react";
 import img1 from "@/assets/adimg1.jpg";
 import img2 from "@/assets/adimg2.jpg";
+import img3 from "@/assets/adimg3.jpg";
+import img4 from "@/assets/adimg4.jpg";
+import img5 from "@/assets/adimg5.jpg";
+import img6 from "@/assets/adimg6.jpg";
 import {
   IconPlayerPause,
   IconPlayerPlay,
@@ -19,7 +23,7 @@ const AdvertiseSection = () => {
       </div>
 
       <div className="my-20 md:my-40 mx-auto  flex flex-row-reverse max-md:flex-col justify-between  gap-10 lg:gap-40">
-        <ImageWithPosition bigImg={img1} smallImg={img2} leftAlign={false} />
+        <ImageWithPosition bigImg={img3} smallImg={img6} leftAlign={false} />
         <SideTextWithCTA
           subTitle="Property selling"
           leftAlign={false}
@@ -29,12 +33,12 @@ const AdvertiseSection = () => {
       </div>
 
       <div className="my-20 md:my-40 mx-auto  flex max-md:flex-col justify-between gap-10 md:gap-20 lg:gap-40">
-        <ImageWithPosition bigImg={img1} smallImg={img2} leftAlign={true} />
+        <ImageWithPosition bigImg={img5} smallImg={img1} leftAlign={true} />
         <SideTextWithCTA />
       </div>
 
       <div className="my-20 md:my-40 mx-auto  flex flex-row-reverse max-md:flex-col justify-between  gap-10 lg:gap-40">
-        <ImageWithPosition bigImg={img1} smallImg={img2} leftAlign={false} />
+        <ImageWithPosition bigImg={img3} smallImg={img4} leftAlign={false} />
         <SideTextWithCTA
           subTitle="Property selling"
           leftAlign={false}
@@ -61,12 +65,12 @@ const ImageWithPosition = ({ bigImg, smallImg, leftAlign = true }) => {
         <IconPlayerPlayFilled className="size-10 " />
       </div>
       <Image
-        src={img1}
+        src={bigImg}
         alt="property image"
         className="size-full sm:w-80 sm:h-80 rounded-md relative"
       />
       <Image
-        src={img2}
+        src={smallImg}
         alt="property image"
         className={`max-sm:hidden w-80 h-40 rounded-md relative  ${
           leftAlign ? "-top-20 -right-20" : "-top-[400px] -right-20"

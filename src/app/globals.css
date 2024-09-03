@@ -13,5 +13,14 @@
   background: url("../assets/heritage_heroimg.jpeg");
   background-size: cover;
   object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.buyPageBanner {
+  background: url("../assets/buy_page_banner.jpeg");
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
