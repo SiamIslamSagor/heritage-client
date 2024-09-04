@@ -1,12 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { AuthContext } from "@/providers/AuthProvider";
 
 const image_hosting_key = "0aee1bb03bebe9430916f501aa7158b9";
 
 const AuthForm = () => {
+  const { user, setUser } = useContext(AuthContext);
+
   const [isSignUp, setIsSignUp] = useState(false);
   const {
     register,
@@ -42,13 +45,40 @@ const AuthForm = () => {
     // Handle sign-up or sign-in based on the form type
     if (isSignUp) {
       console.log("Sign-Up Data:", data);
-      // Implement your sign-up logic here
+      const res = await axios.post(
+        "http://localhost:5000/user/new",
+        {
+          ...data,
+          avatar: data.image,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+      console.log("RES: ", res.data);
+      if (res.data.success) {
+        const res = await axios.get("http://localhost:5000/user/me", {
+          withCredentials: true,
+        });
+        console.log(res.data);
+        setUser(res.data.user);
+      }
     } else {
       console.log("Sign-In Data:", data);
-      // Implement your sign-in logic here
+      const res = await axios.post("http://localhost:5000/user/login", data, {
+        withCredentials: true,
+      });
+      console.log("RES: ", res.data);
+      if (res.data.success) {
+        const res = await axios.get("http://localhost:5000/user/me", {
+          withCredentials: true,
+        });
+        console.log(res.data);
+        setUser(res.data.user);
+      }
     }
 
-    reset(); // Reset the form after submission
+    // reset(); // Reset the form after submission
   };
 
   return (
@@ -59,6 +89,24 @@ const AuthForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         {isSignUp && (
           <>
+            <div className="mb-4">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                {...register("name", { required: "Name is required" })}
+                className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              />
+              {errors.name && (
+                <p className="text-red-500 text-xs">{errors.name.message}</p>
+              )}
+            </div>
+
             <div className="mb-4">
               <label
                 htmlFor="username"

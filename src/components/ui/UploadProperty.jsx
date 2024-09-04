@@ -7,6 +7,24 @@ import { useRef, useState } from "react";
 // todo: add key on env
 const image_hosting_key = "0aee1bb03bebe9430916f501aa7158b9";
 
+/* 
+images
+title
+priceRange (allwayes USDT)
+description
+amenities
+location
+propertyType
+listingType
+area
+city
+country
+bedrooms
+bathrooms
+parkingSpace
+
+*/
+
 export default function PropertyUploadForm() {
   const imageInputRef = useRef(null);
 
