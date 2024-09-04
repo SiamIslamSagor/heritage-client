@@ -1,6 +1,10 @@
 "use client";
 
-import { IconSearch } from "@tabler/icons-react";
+import {
+  IconArrowDown,
+  IconArrowDownCircle,
+  IconSearch,
+} from "@tabler/icons-react";
 import React, { useState } from "react";
 
 const BuyPageHero = () => {
@@ -11,7 +15,7 @@ const BuyPageHero = () => {
 
   return (
     <div>
-      <div className="h-60 w-full border buyPageBanner relative">
+      <div className="h-60 w-full border buyPageBanner relative mb-60">
         <div className="relative top-24  bg-white shadow-md rounded-md p-8 space-y-5 max-w-4xl mx-auto">
           <div className="flex gap-4">
             <div
@@ -92,6 +96,34 @@ const BuyPageHero = () => {
               <IconSearch /> Find Property
             </button>
           </div>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-10 items-center justify-center">
+        {[1, 0, 1, 0].map((i, idx) => (
+          <StackCard
+            key={idx + "stack key"}
+            color={i == 1 ? "orange" : i == 0 && "blue"}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const StackCard = ({ color }) => {
+  return (
+    <div
+      className={`group cursor-pointer min-w-60 max-w-60 rounded-md bg-${color}-100 p-6 space-y-2`}
+    >
+      <h4 className={`text-4xl font-bold text-${color}-600`}>2k+</h4>
+      <p>New Flat Listed</p>
+      <div className="flex justify-between items-center">
+        <p className={`underline text-${color}-600`}>View all</p>
+        <div
+          className={`border-2 border-${color}-600 size-8 rounded-full flex items-center justify-center text-${color}-600 cursor-pointer duration-300`}
+        >
+          <IconArrowDown className="duration-300 transition group-hover:translate-y-1.5" />
         </div>
       </div>
     </div>
