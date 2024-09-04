@@ -111,10 +111,10 @@ const BuyPageHero = () => {
   );
 };
 
-const StackCard = ({ color }) => {
+const StackCard = ({ color = "orange" }) => {
   return (
     <div
-      className={`group cursor-pointer min-w-60 max-w-60 rounded-md bg-${color}-100 p-6 space-y-2`}
+      className={`group cursor-pointer min-w-60 max-w-60 rounded-md bg-${color}-100 p-6 space-y-2 shadow-sm hover:shadow-md border duration-300`}
     >
       <h4 className={`text-4xl font-bold text-${color}-600`}>2k+</h4>
       <p>New Flat Listed</p>
