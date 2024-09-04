@@ -1,11 +1,8 @@
 "use client";
 
-import {
-  IconArrowDown,
-  IconArrowDownCircle,
-  IconSearch,
-} from "@tabler/icons-react";
-import React, { useState } from "react";
+import { cn } from "@/lib/utils";
+import { IconArrowDown, IconSearch } from "@tabler/icons-react";
+import { useState } from "react";
 
 const BuyPageHero = () => {
   const [category, setCategory] = useState("Buy");
@@ -114,14 +111,20 @@ const BuyPageHero = () => {
 const StackCard = ({ color = "orange" }) => {
   return (
     <div
-      className={`group cursor-pointer min-w-60 max-w-60 rounded-md bg-${color}-100 p-6 space-y-2 shadow-sm hover:shadow-md border duration-300`}
+      className={cn(
+        "group cursor-pointer min-w-60 max-w-60 rounded-md p-6 space-y-2 shadow-sm hover:shadow-md border duration-300",
+        `bg-${color}-100`
+      )}
     >
-      <h4 className={`text-4xl font-bold text-${color}-600`}>2k+</h4>
+      <h4 className={cn("text-4xl font-bold", `text-${color}-600`)}>2k+</h4>
       <p>New Flat Listed</p>
       <div className="flex justify-between items-center">
-        <p className={`underline text-${color}-600`}>View all</p>
+        <p className={cn("underline", `text-${color}-600`)}>View all</p>
         <div
-          className={`border-2 border-${color}-600 size-8 rounded-full flex items-center justify-center text-${color}-600 cursor-pointer duration-300`}
+          className={cn(
+            "border-2 size-8 rounded-full flex items-center justify-center cursor-pointer duration-300",
+            `border-${color}-600 text-${color}-600`
+          )}
         >
           <IconArrowDown className="duration-300 transition group-hover:translate-y-1.5" />
         </div>

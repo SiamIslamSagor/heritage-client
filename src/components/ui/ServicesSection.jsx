@@ -1,11 +1,12 @@
 import { services } from "@/constant/constant";
 import { IconHome } from "@tabler/icons-react";
 import React from "react";
+import SectionTitle from "../shared/SectionTitle";
 
 const ServicesSection = () => {
   return (
     <div className="mb-10 xl:mb-20">
-      <h3 className="text-4xl font-bold text-center mb-20">Other Services</h3>
+      <SectionTitle title={"Other Services"} />{" "}
       <div className="flex flex-wrap gap-10  justify-center">
         {services.map(service => (
           <div
