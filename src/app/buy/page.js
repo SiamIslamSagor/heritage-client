@@ -7,7 +7,9 @@ const BuyPage = () => {
   return (
     <main>
       <BuyPageHero />
-      <div className=" m-20">{/* <PropertyCard /> */}</div>
+      <div className=" m-20">
+        <PropertyCard />
+      </div>
 
       <div className="max-w-7xl mx-auto">
         <SearchPropertyCard />
